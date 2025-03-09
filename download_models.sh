@@ -10,20 +10,19 @@ fi
 download_model() {
     local url="$1"
     local folder="$2"
-    local filename=$(basename "$url")
 
     # Ensure target directory exists
     mkdir -p "$folder"
 
-    echo "Downloading: $filename to $folder..."
-    
-    # Use curl with authentication
-    curl -L -H "Authorization: Bearer $CIVITAI_TOKEN" -o "$folder/$filename" "$url"
+    echo "Downloading: $url to $folder..."
+
+    # Use curl with -J to respect server-sent filenames
+    curl -L -H "Authorization: Bearer $CIVITAI_TOKEN" -J -O --output-dir "$folder" "$url"
 
     if [[ $? -eq 0 ]]; then
-        echo "✅ Successfully downloaded: $filename"
+        echo "✅ Successfully downloaded: $url"
     else
-        echo "❌ Failed to download: $filename"
+        echo "❌ Failed to download: $url"
     fi
 }
 
