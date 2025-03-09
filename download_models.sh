@@ -6,57 +6,43 @@ if [[ -z "$CIVITAI_TOKEN" ]]; then
     exit 1
 fi
 
-# Define download function
+# Define download function with explicit filenames and folder paths
 download_model() {
     local url="$1"
     local folder="$2"
+    local filename="$3"
 
     # Ensure target directory exists
     mkdir -p "$folder"
 
-    echo "Downloading: $url to $folder..."
-
-    # Use curl with -J to respect server-sent filenames
-    curl -L -H "Authorization: Bearer $CIVITAI_TOKEN" -J -O --output-dir "$folder" "$url"
+    echo "Downloading: $filename to $folder..."
+    
+    # Use curl with authentication
+    curl -L -H "Authorization: Bearer $CIVITAI_TOKEN" -o "$folder/$filename" "$url"
 
     if [[ $? -eq 0 ]]; then
-        echo "✅ Successfully downloaded: $url"
+        echo "✅ Successfully downloaded: $filename"
     else
-        echo "❌ Failed to download: $url"
+        echo "❌ Failed to download: $filename"
     fi
 }
 
-# Define directories
-CKPT_DIR="/workspace/storage/stable_diffusion/models/ckpt"
-LORA_DIR="/workspace/storage/stable_diffusion/models/lora"
+# Define base directories
+BASE_DIR="/workspace/storage/stable_diffusion/models"
+CKPT_DIR="$BASE_DIR/ckpt"
+LORA_DIR="$BASE_DIR/lora"
 
-# Download Checkpoint Models
-CKPT_MODELS=(
-    "https://civitai.com/api/download/models/1422871?type=Model&format=SafeTensor&size=pruned&fp=fp16"
-    "https://civitai.com/api/download/models/1372996"
-    "https://civitai.com/api/download/models/1485344"
-    "https://civitai.com/api/download/models/1443129"
-    "https://civitai.com/api/download/models/1413921"
-    "https://civitai.com/api/download/models/1471829"
-)
+# Download Checkpoint Models with Explicit Paths
+download_model "https://civitai.com/api/download/models/1422871?type=Model&format=SafeTensor&size=pruned&fp=fp16" "$CKPT_DIR/sdxl" "SDXL_Realism_By_Stable_Yogi.safetensors"
+download_model "https://civitai.com/api/download/models/1372996" "$CKPT_DIR/illustrious" "Illustrious_Realism_By_Stable_Yogi.safetensors"
+download_model "https://civitai.com/api/download/models/1485344" "$CKPT_DIR/illustrious" "Unholy_Desire_Mix_Sinister_Aesthetic.safetensors"
+download_model "https://civitai.com/api/download/models/1443129" "$CKPT_DIR/illustrious" "PerfectRSBmix.safetensors"
+download_model "https://civitai.com/api/download/models/1413921" "$CKPT_DIR/illustrious" "Uncanny_Valley.safetensors"
+download_model "https://civitai.com/api/download/models/1471829" "$CKPT_DIR/illustrious" "CyberIllustrious_CyberRealistic.safetensors"
 
-# Download Lora Models
-LORA_MODELS=(
-    "https://civitai.com/api/download/models/424720"
-    "https://civitai.com/api/download/models/424706"
-    "https://civitai.com/api/download/models/652659"
-)
-
-echo "🚀 Starting model downloads..."
-
-# Loop through and download Checkpoint models
-for url in "${CKPT_MODELS[@]}"; do
-    download_model "$url" "$CKPT_DIR"
-done
-
-# Loop through and download Lora models
-for url in "${LORA_MODELS[@]}"; do
-    download_model "$url" "$LORA_DIR"
-done
+# Download Lora Models with Explicit Paths
+download_model "https://civitai.com/api/download/models/424720" "$LORA_DIR/sdxl" "LCM_Model_1.safetensors"
+download_model "https://civitai.com/api/download/models/424706" "$LORA_DIR/sd15" "LCM_Model_2.safetensors"
+download_model "https://civitai.com/api/download/models/652659" "$LORA_DIR/pony" "Pony_LCM.safetensors"
 
 echo "🎉 All downloads completed!"
