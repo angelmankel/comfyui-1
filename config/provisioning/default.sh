@@ -35,15 +35,15 @@ CHECKPOINT_MODELS=(
 
     # Illustrious
     # Realism_Illustrious_By_Stable_Yogi
-    "https://civitai.com/api/download/models/1372996?type=Model&format=SafeTensor&size=pruned&fp=fp16"
+    "https://civitai.com/api/download/models/1372996"
     # Unholy Desire Mix - Sinister Aesthetic (Illustrious)
-    "https://civitai.com/api/download/models/1485344?type=Model&format=SafeTensor&size=pruned&fp=bf16"
+    "https://civitai.com/api/download/models/1485344"
     # PerfectRSBmix
-    "https://civitai.com/api/download/models/1443129?type=Model&format=SafeTensor&size=pruned&fp=fp16"
+    "https://civitai.com/api/download/models/1443129"
     # Uncanny valley
-    "https://civitai.com/api/download/models/1413921?type=Model&format=SafeTensor&size=full&fp=fp16"
+    "https://civitai.com/api/download/models/1413921"
     # CyberIllustrious | CyberRealistic
-    "https://civitai.com/api/download/models/1471829?type=Model&format=SafeTensor&size=pruned&fp=fp16"
+    "https://civitai.com/api/download/models/1471829"
 )
 
 UNET_MODELS=(
@@ -52,10 +52,10 @@ UNET_MODELS=(
 
 LORA_MODELS=(
     # LCM 
-    "https://civitai.com/api/download/models/424720?type=Model&format=SafeTensor"
-    "https://civitai.com/api/download/models/424706?type=Model&format=SafeTensor"
+    "https://civitai.com/api/download/models/424720"
+    "https://civitai.com/api/download/models/424706"
     # Pony LCM
-    "https://civitai.com/api/download/models/652659?type=Model&format=SafeTensor"
+    "https://civitai.com/api/download/models/652659"
 )
 
 VAE_MODELS=(
