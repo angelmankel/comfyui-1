@@ -43,6 +43,8 @@ download_model "https://civitai.com/api/download/models/1757828?type=Model&forma
 download_model "https://civitai.com/api/download/models/1527952?type=Model&format=SafeTensor&size=pruned&fp=fp16" "$CKPT_DIR/illustrious" "Diving-Illustrious_Semi-Real.safetensors"
 download_model "https://civitai.com/api/download/models/1732686?type=Model&format=SafeTensor&size=pruned&fp=fp16" "$CKPT_DIR/illustrious" "Diving-Illustrious_Anime.safetensors"
 
+# 4k-Ultrasharp upscaler https://civitai.com/api/download/models/125843?type=Model&format=PickleTensor
+
 # Download Lora Models with Explicit Paths
 # download_model "https://civitai.com/api/download/models/424720" "$LORA_DIR/sdxl" "LCM_Model_1.safetensors"
 # download_model "https://civitai.com/api/download/models/424706" "$LORA_DIR/sd15" "LCM_Model_2.safetensors"
