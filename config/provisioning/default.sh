@@ -277,6 +277,8 @@ function download_custom_models() {
     download_model "https://civitai.com/api/download/models/1757828?type=Model&format=SafeTensor&size=pruned&fp=fp16" "$CKPT_DIR/illustrious" "iLstMix.safetensors"
     download_model "https://civitai.com/api/download/models/1527952?type=Model&format=SafeTensor&size=pruned&fp=fp16" "$CKPT_DIR/illustrious" "Diving-Illustrious_Semi-Real.safetensors"
     download_model "https://civitai.com/api/download/models/1732686?type=Model&format=SafeTensor&size=pruned&fp=fp16" "$CKPT_DIR/illustrious" "Diving-Illustrious_Anime.safetensors"
+    download_model "https://civitai.com/api/download/models/1794965?type=Model&format=SafeTensor&size=pruned&fp=fp16" "$CKPT_DIR/illustrious" "BismuthIllustriousMix.safetensors"
+    download_model "https://civitai.com/api/download/models/1387129?type=Model&format=SafeTensor&size=pruned&fp=fp16" "$CKPT_DIR/illustrious" "Be-Mix-Illustrious.safetensors"
     
     # 4k-Ultrasharp upscaler https://civitai.com/api/download/models/125843?type=Model&format=PickleTensor
     
