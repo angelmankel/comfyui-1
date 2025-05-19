@@ -287,6 +287,8 @@ function download_custom_models() {
     # download_model "https://civitai.com/api/download/models/424706" "$LORA_DIR/sd15" "LCM_Model_2.safetensors"
     download_model "https://civitai.com/api/download/models/652659" "$LORA_DIR/pony" "Pony_LCM.safetensors"
     
+    curl -L -H "Authorization: Bearer $HF_TOKEN" -o /workspace/ComfyUI/custom_nodes/ComfyUI-BRIA_AI-RMBG/RMBG-1.4/model.safetensors https://huggingface.co/briaai/RMBG-2.0/blob/main/model.safetensors
+    
     echo "🎉 All downloads completed!"
 }
 
