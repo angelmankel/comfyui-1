@@ -274,8 +274,8 @@ function download_custom_models() {
     # Download Checkpoint Models with Explicit Paths
     # download_model "https://civitai.com/api/download/models/1422871?type=Model&format=SafeTensor&size=pruned&fp=fp16" "$CKPT_DIR/sdxl" "SDXL_Realism_By_Stable_Yogi.safetensors"
     # download_model "https://civitai.com/api/download/models/1736657?type=Model&format=SafeTensor&size=pruned&fp=fp16" "$CKPT_DIR/illustrious" "Realism_Illustrious_By_Stable_Yogi.safetensors"
-    # download_model "https://civitai.com/api/download/models/1485344" "$CKPT_DIR/illustrious" "Unholy_Desire_Mix_Sinister_Aesthetic.safetensors"
-    download_model "https://civitai.com/api/download/models/1443129" "$CKPT_DIR/illustrious" "PerfectRSBmix.safetensors"
+    download_model "https://civitai.com/api/download/models/1485344" "$CKPT_DIR/illustrious" "Unholy_Desire_Mix_Sinister_Aesthetic.safetensors"
+    # download_model "https://civitai.com/api/download/models/1443129" "$CKPT_DIR/illustrious" "PerfectRSBmix.safetensors"
     download_model "https://civitai.com/api/download/models/1413921" "$CKPT_DIR/illustrious" "Uncanny_Valley.safetensors"
     # download_model "https://civitai.com/api/download/models/1471829" "$CKPT_DIR/illustrious" "CyberIllustrious_CyberRealistic.safetensors"
     download_model "https://civitai.com/api/download/models/1757828?type=Model&format=SafeTensor&size=pruned&fp=fp16" "$CKPT_DIR/illustrious" "iLstMix.safetensors"
@@ -285,8 +285,8 @@ function download_custom_models() {
     download_model "https://civitai.com/api/download/models/1387129?type=Model&format=SafeTensor&size=pruned&fp=fp16" "$CKPT_DIR/illustrious" "Be-Mix-Illustrious.safetensors"
     
     # Download Upscalers
-    wget https://huggingface.co/Kim2091/UltraSharp/blob/main/4x-UltraSharp.safetensors /workspace/ComfyUI/models/upscale_models/
-    wget https://huggingface.co/Kim2091/AnimeSharp/blob/main/4x-AnimeSharp.safetensors /workspace/ComfyUI/models/upscale_models/
+    # wget https://huggingface.co/Kim2091/UltraSharp/blob/main/4x-UltraSharp.safetensors /workspace/ComfyUI/models/upscale_models/
+    # wget https://huggingface.co/Kim2091/AnimeSharp/blob/main/4x-AnimeSharp.safetensors /workspace/ComfyUI/models/upscale_models/
     
     # Download Lora Models with Explicit Paths
     # download_model "https://civitai.com/api/download/models/424720" "$LORA_DIR/sdxl" "LCM_Model_1.safetensors"
@@ -294,14 +294,14 @@ function download_custom_models() {
     download_model "https://civitai.com/api/download/models/652659" "$LORA_DIR/pony" "Pony_LCM.safetensors"
 
     # Download the preview models
-    wget https://github.com/madebyollin/taesd/blob/main/taesdxl_decoder.pth /workspace/ComfyUI/models/vae_approx/
-    wget https://github.com/madebyollin/taesd/blob/main/taesdxl_encoder.pth /workspace/ComfyUI/models/vae_approx/    
+    # wget https://github.com/madebyollin/taesd/blob/main/taesdxl_decoder.pth /workspace/ComfyUI/models/vae_approx/
+    # wget https://github.com/madebyollin/taesd/blob/main/taesdxl_encoder.pth /workspace/ComfyUI/models/vae_approx/    
 
     # Download BRIA background remover model
     git clone https://huggingface.co/briaai/RMBG-1.4 /workspace/ComfyUI/custom_nodes/ComfyUI-BRIA_AI-RMBG/RMBG-1.4
 
     # Download deepseek
-    git clone https://huggingface.co/deepseek-ai/Janus-Pro-7B /workspace/ComfyUI/models/Janus-Pro/
+    # git clone https://huggingface.co/deepseek-ai/Janus-Pro-7B /workspace/ComfyUI/models/Janus-Pro/
     
     echo "🎉 All downloads completed!"
 }
