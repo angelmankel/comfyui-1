@@ -25,7 +25,6 @@ NODES=(
     "https://github.com/cubiq/ComfyUI_essentials",
     "https://github.com/ZHO-ZHO-ZHO/ComfyUI-BRIA_AI-RMBG",
     "https://github.com/spacepxl/ComfyUI-Image-Filters",
-    "https://github.com/ShmuelRonen/ComfyUI-Janus_pro_vision"
 )
 
 CHECKPOINT_MODELS=(
@@ -277,7 +276,7 @@ function download_custom_models() {
     download_model "https://civitai.com/api/download/models/1485344" "$CKPT_DIR/illustrious" "Unholy_Desire_Mix_Sinister_Aesthetic.safetensors"
     # download_model "https://civitai.com/api/download/models/1443129" "$CKPT_DIR/illustrious" "PerfectRSBmix.safetensors"
     download_model "https://civitai.com/api/download/models/1413921" "$CKPT_DIR/illustrious" "Uncanny_Valley.safetensors"
-    # download_model "https://civitai.com/api/download/models/1471829" "$CKPT_DIR/illustrious" "CyberIllustrious_CyberRealistic.safetensors"
+    download_model "https://civitai.com/api/download/models/1471829" "$CKPT_DIR/illustrious" "CyberIllustrious_CyberRealistic.safetensors"
     download_model "https://civitai.com/api/download/models/1757828?type=Model&format=SafeTensor&size=pruned&fp=fp16" "$CKPT_DIR/illustrious" "iLstMix.safetensors"
     # download_model "https://civitai.com/api/download/models/1527952?type=Model&format=SafeTensor&size=pruned&fp=fp16" "$CKPT_DIR/illustrious" "Diving-Illustrious_Semi-Real.safetensors"
     # download_model "https://civitai.com/api/download/models/1732686?type=Model&format=SafeTensor&size=pruned&fp=fp16" "$CKPT_DIR/illustrious" "Diving-Illustrious_Anime.safetensors"
@@ -285,8 +284,8 @@ function download_custom_models() {
     download_model "https://civitai.com/api/download/models/1387129?type=Model&format=SafeTensor&size=pruned&fp=fp16" "$CKPT_DIR/illustrious" "Be-Mix-Illustrious.safetensors"
     
     # Download Upscalers
-    # wget https://huggingface.co/Kim2091/UltraSharp/blob/main/4x-UltraSharp.safetensors /workspace/ComfyUI/models/upscale_models/
-    # wget https://huggingface.co/Kim2091/AnimeSharp/blob/main/4x-AnimeSharp.safetensors /workspace/ComfyUI/models/upscale_models/
+    wget https://huggingface.co/Kim2091/UltraSharp/blob/main/4x-UltraSharp.safetensors /workspace/ComfyUI/models/upscale_models/
+    wget https://huggingface.co/Kim2091/AnimeSharp/blob/main/4x-AnimeSharp.safetensors /workspace/ComfyUI/models/upscale_models/
     
     # Download Lora Models with Explicit Paths
     # download_model "https://civitai.com/api/download/models/424720" "$LORA_DIR/sdxl" "LCM_Model_1.safetensors"
